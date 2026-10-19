@@ -1,0 +1,374 @@
+/* ---------- шрифты ---------- */
+
+@font-face { font-family: "Fira Sans"; font-weight: 400; src: url("../fonts/fira-sans-400.woff2"); }
+@font-face { font-family: "Fira Sans"; font-weight: 500; src: url("../fonts/fira-sans-500.woff2"); }
+@font-face { font-family: "Playfair Display"; font-weight: 400; src: url("../fonts/playfair-display-400.woff2"); }
+@font-face { font-family: "Playfair Display"; font-weight: 700; src: url("../fonts/playfair-display-700.woff2"); }
+
+/* ---------- переменные ---------- */
+
+:root {
+  --dark: #1b1b1b;
+  --green: #4fae8e;
+  --light: #f2f2f2;
+  --gray: #bbb;
+  --serif: "Playfair Display", serif;
+}
+
+/* ---------- база ---------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 0.875rem "Fira Sans", sans-serif;
+  color: var(--dark);
+  background: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, .logo, .heading-section__link, .poster__date, .calendar__month, .announcement__date {
+  font-family: var(--serif);
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.button {
+  padding: 0.625rem 1.125rem;
+  border-radius: 20px;
+  background: var(--green);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ---------- header ---------- */
+
+.header {
+  background: var(--dark);
+  color: #fff;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+.logo {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav a {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.nav a + a::before {
+  content: "•";
+  margin: 0 0.75rem;
+}
+
+/* ---------- heading-section ---------- */
+
+.heading-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5rem 0 1.875rem;
+}
+
+.heading-section__title {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.heading-section__link {
+  font-size: 0.9375rem;
+}
+
+.heading-section__link i {
+  margin-right: 0.875rem;
+  font-size: 1.375rem;
+  color: var(--green);
+  vertical-align: middle;
+}
+
+/* ---------- афиша + сайдбар ---------- */
+
+.layout {
+  display: flex;
+  gap: 1.875rem;
+}
+
+.posters {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar {
+  flex: 0 0 324px;
+}
+
+/* ---------- poster ---------- */
+
+.poster {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  padding: 1.25rem 2.25rem 1.25rem 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 8px;
+  background: var(--light);
+}
+
+.poster__date {
+  width: 84px;
+  text-align: center;
+}
+
+.poster__day {
+  display: block;
+  font-size: 2rem;
+}
+
+.poster__month {
+  font-weight: 700;
+}
+
+.poster__img {
+  flex: 0 0 196px;
+  height: 148px;
+  border-radius: 4px;
+  background: var(--gray);
+}
+
+.poster__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.poster__title {
+  margin-bottom: 1.125rem;
+  font-size: 1.125rem;
+}
+
+.poster__text {
+  margin-bottom: 1.625rem;
+  font-size: 0.625rem;
+}
+
+.poster__meta {
+  display: flex;
+  gap: 1.375rem;
+  font-size: 0.625rem;
+}
+
+.poster__meta i {
+  margin-right: 0.625rem;
+  font-size: 1.125rem;
+  color: var(--gray);
+  vertical-align: middle;
+}
+
+/* ---------- calendar ---------- */
+
+.calendar {
+  margin-bottom: 1.875rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--light);
+}
+
+.calendar__cover {
+  display: flex;
+  align-items: flex-end;
+  height: 184px;
+  padding: 1.125rem 1rem;
+  background: var(--gray);
+}
+
+.calendar__title {
+  font-size: 1.125rem;
+}
+
+.calendar__body {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.calendar__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calendar__month {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.calendar__arrows {
+  display: flex;
+  gap: 6px;
+}
+
+.calendar__arrow {
+  width: 28px;
+  height: 28px;
+  border: 7px solid var(--dark);
+  background: var(--green);
+}
+
+.calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 24px);
+  gap: 3px;
+}
+
+.calendar__grid span {
+  line-height: 24px;
+  text-align: center;
+  font-size: 0.5rem;
+  color: #fff;
+  background: var(--gray);
+}
+
+.calendar__grid .active {
+  background: var(--green);
+}
+
+/* ---------- news ---------- */
+
+.news {
+  margin-bottom: 1.875rem;
+  line-height: 1.5;
+}
+
+.news__title {
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.news__text {
+  font-size: 0.5625rem;
+}
+
+/* ---------- announcement ---------- */
+
+.announcement {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.5rem;
+  font-weight: 500;
+}
+
+.announcement__date {
+  display: grid;
+  place-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 4px;
+  background: var(--green);
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.announcement__date small {
+  font-size: 0.5625rem;
+}
+
+/* ---------- thumb-slider ---------- */
+
+.thumbs {
+  display: flex;
+  gap: 1.25rem;
+  margin: 2.5rem 0 3.75rem;
+}
+
+.thumb {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 256px;
+  padding: 0.375rem 0.625rem;
+  border-radius: 4px;
+  background: var(--light);
+  font-size: 0.5625rem;
+  font-weight: 500;
+}
+
+.thumb__img {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  background: #555;
+}
+
+/* ---------- footer ---------- */
+
+.footer {
+  padding: 2.5rem 0 1.25rem;
+  background: var(--dark);
+  color: #fff;
+  font-size: 0.625rem;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2.25rem;
+  border-bottom: 1px solid #555;
+}
+
+.footer__col {
+  width: 260px;
+}
+
+.footer__title {
+  margin-bottom: 1.625rem;
+  font-size: 0.875rem;
+}
+
+.footer__col p,
+.footer__col a {
+  display: block;
+  margin-bottom: 1.125rem;
+}
+
+.footer__col a[href^="mailto"] {
+  text-decoration: underline;
+}
+
+.footer__bottom {
+  margin-top: 1.25rem;
+  text-align: center;
+  color: #999;
+}
