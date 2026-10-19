@@ -372,3 +372,29 @@ h1, h2, h3, h4, .logo, .heading-section__link, .poster__date, .calendar__month, 
   text-align: center;
   color: #999;
 }
+
+/* ---------- страница афиши ---------- */
+
+.afisha {
+  padding: 3.125rem 0 6.25rem;
+  background: #ececec;
+}
+
+.afisha .heading-section__title {
+  margin-bottom: 3.75rem;
+  text-align: center;
+}
+
+.afisha .poster {
+  margin-bottom: 2.5rem;
+  background: #e2e2e2;
+}
+
+img.poster__img {
+  object-fit: cover;
+}
+
+.footer__links {
+  display: flex;
+  gap: 1rem;
+}
