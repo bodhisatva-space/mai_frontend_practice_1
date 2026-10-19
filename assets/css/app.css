@@ -159,7 +159,8 @@ h1, h2, h3, h4, .logo, .heading-section__link, .poster__date, .calendar__month, 
 }
 
 .poster__img {
-  flex: 0 0 196px;
+  flex-shrink: 0;
+  width: 196px;
   height: 148px;
   border-radius: 4px;
   background: var(--gray);
